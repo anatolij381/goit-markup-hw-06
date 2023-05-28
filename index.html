@@ -13,6 +13,17 @@
     
 </head>
 <body class="body">
+    <!-- modal -->
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <a href="" data-modal-closed>
+                <svg class="click" width="24" height="24">
+                <use href="./images/sprite.svg#icon-click_2-2"></use>
+                </svg>
+            </a>
+            <h2 class="modal-title">Leave your contacts and we will call you back</h2>
+        </div>
+    </div>
     <!-- шапка -->
     <header class="header">
         <!-- навігація сайту -->
@@ -20,14 +31,13 @@
             <nav class="header-nav header-nav-flex">
                 <a class="logo" href="./index.html"><span class="accent">WEB</span>STUDIO</a>
                 <ul class="menunav">
-                    <li class="menunav-studio">
-                        <a class="nav activ" href="./index.html">Studio</a>
-                        <div class="nav-studio line activ"></div>
+                    <li class="menunav-studio activ">
+                        <a class="nav" href="./index.html">Studio</a>                        
                     </li>
-                    <li class="menunav-portfolio">
+                    <li class="menunav-portfolio ">
                         <a class="nav" href="./portfolio.html">Portfolio</a>
                     </li>
-                    <li class="menunav-contacts">
+                    <li class="menunav-contacts ">
                         <a class="nav" href="./contakts.html">Contacts</a>
                     </li>
                 </ul>
@@ -43,7 +53,7 @@
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">Effective Solutions for Your Business</h1>
-            <a href="" class="hero-button">Order Service</a>
+            <button class="hero-button" data-modal-open>Order Service</button>
         </div>
     </section>
     <div class="section">
@@ -302,5 +312,6 @@
             </div>            
         </footer>
     </div>
+    <script src="./js/modal.js"></script>
 </body>
 </html>

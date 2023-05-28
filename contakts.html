@@ -13,6 +13,7 @@
     
 </head>
 <body class="body">
+    
     <!-- шапка -->
     <header class="header">
         <!-- навігація сайту -->
@@ -26,9 +27,8 @@
                     <li class="menunav-portfolio">
                         <a class="nav" href="./portfolio.html">Portfolio</a>
                     </li>
-                    <li class="menunav-contacts">
-                        <a class="nav activ" href="./contakts.html">Contacts</a>
-                        <div class="nav-contacts line activ"></div>
+                    <li class="menunav-contacts activ">
+                        <a class="nav" href="./contakts.html">Contacts</a>
                     </li>
                 </ul>
             </nav>            
@@ -43,15 +43,17 @@
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">Effective Solutions for Your Business</h1>
-            <a href="" class="hero-button">Order Service</a>
+            <button class="hero-button" data-modal-open>Order Service</button>
         </div>
     </section>
     <!-- modal -->
-    <div class="backdrop">
+    <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-            <svg class="clic" width="24" height="24">
-            <use href="./images/sprite.svg#icon-click_2-2"></use>
-            </svg>
+            <a class="clic" data-modal-close href="">
+                <svg  width="24" height="24">
+                    <use href="./images/sprite.svg#icon-click_2-2"></use>
+                </svg>
+            </a>           
             <h2 class="modal-title">Leave your contacts and we will call you back</h2>
             <h3 class="modal-name">Name</h3>
                 <div class="modal-name-button">
@@ -87,6 +89,6 @@
 
         </div>
     </div>
-       
+    <script src="./js/modal.js"></script>  
 </body>
 </html>
