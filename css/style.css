@@ -155,7 +155,7 @@ a {
     color: var(--background-header);
     margin: 0px auto;
 }
-.hero-button {
+.button {
     margin-top: 48px;
     margin-left: auto;
     margin-right: auto;
@@ -175,7 +175,7 @@ a {
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hero-button:active {
+.button:active {
     background-color: var(--ocean);
 }
 .advantage {
@@ -427,24 +427,27 @@ a {
     gap: 24px;
 }
 .subscribe-button {
-    /* display: block; */
-    font-style: normal;
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 2;    
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.04em;
-    
-    color: var(--background-header);
+
+}
+.subscribe-button-input {
     width: 264px;
     height: 40px;
-    padding-left: 16px;
-    border: 1px solid var(--background-header);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-    border-radius: 4px;
+    padding: 8px 16px;
+    background-color: var(--navy-blue);
 
+    font-family: 'Roboto';
+    left: 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 2;
+
+    letter-spacing: 0.04em;
+    
+    color: rgba(255, 255, 255, 0.6);
+}
+.subscribe-button-label {
+    
 }
 .subscribe-button-subscribe {
     font-family: 'Roboto';
@@ -665,29 +668,43 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     background: #FCFCFC;
     border-radius: 4px;
 }
+.click-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transition-property: background-color;
+    transition: 250ms  cubic-bezier(0.4, 0, 0.2, 1);
+}
+.click-button:hover,
+.click-button:focus {
+    background-color: var(--ocean);
+    
+}    
+.click-button:hover .click,
+.click-button:focus .click {
+    fill: var(--background-header);
+}
 .click {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: block;
     margin-left: auto;
+    transition-property: fill;
+    transition: 250ms  cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-group-label {
+    margin-top: 8px;
 }
 .form-group {
     margin: 0;
-    margin-top: 24px;
+    margin-top: 48px;
     padding: 0;
     border: 0;
-}
-.form-label {
-    display: flex;
-    flex-direction: column;
-    
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.17;
-    
-    letter-spacing: 0.01em;
-        
-    color: var(--LIGHT_SLATE);
 }
 .form-title {
     font-family: 'Roboto';
@@ -698,21 +715,98 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     
     text-align: center;
     letter-spacing: 0.02em;
-    
-    /* NAVY BLUE */
+    margin-bottom: 16px;
     
     color: var(--navy-blue);
 }
+.form-label {
+    display: inline-block;
+    position: relative;font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;    
+    letter-spacing: 0.01em;
+        
+    color: var(--LIGHT_SLATE);
+}
 .form-input {
+    width: 360px;
+    height: 40px;
+    margin-top: 4px;
+    padding-left: 38px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+
+    transition-property: outline;
+    transition: 250ms cubic-bezier(0.4, 0.2, 0, 1);
 }
-.form-text {
+.form-input-comment {
+    width: 360px;
+    height: 120px;
+    margin-top: 4px;
+    padding: 8px 8px 8px 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    resize: none;
+
+    transition-property: outline;
+    transition: 250ms cubic-bezier(0.4, 0.2, 0, 1);
+    
+}
+.form-icon {
+    position: absolute;
+    left: 19px;
+    bottom: 14px;
+    transition-property: fiil;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input:focus + .form-icon {
+    fill: var(--iris);
+}
+.form-input:focus-visible,
+.form-input-comment:focus-visible {
+    outline: 1px solid var(--iris);
+}
+.modal-button {
+    display: block;
+    width: 170px;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px 32px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    
+    background: var(--iris);
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.19;
+    letter-spacing: 0.04em;
+    
+    color: var(--background-header);
+}
+.comment {
+    padding-left: 16px;
+}
+.form-checkbox {
+    display: inline;
+}
+.form-checkbox {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
     font-size: 12px;
+    line-height: 1.33;    
+    letter-spacing: 0.04em;
+    margin: 0;
+    
+    color: #757575;
 }
-
-
-
-
-
-
+.form-checkbox-span {
+    color: var(--iris);
+    text-decoration: underline;
+}
